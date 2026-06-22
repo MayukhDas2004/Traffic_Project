@@ -1,10 +1,11 @@
+import subprocess
 from communication.message import TrafficMessage
 from communication.failure_injector import FailureInjector
 from detector.failure_detector import FailureDetector
 from detector.mode_switcher import ModeSwitcher
 
 injector = FailureInjector(
-    packet_loss=0.3,
+    packet_loss=0.5,
     delay_probability=0.2
 )
 
@@ -29,8 +30,7 @@ if result is None:
 else:
 
     status = detector.detect(
-        packet_lost=False,
-        delayed=False
+        packet_lost=False
     )
 
 mode = switcher.select_mode(status)
@@ -38,5 +38,12 @@ mode = switcher.select_mode(status)
 print("STATUS =", status)
 print("MODE =", mode)
 
-if result:
-    print(result)
+if mode == "COOPERATIVE_MARL":
+    subprocess.run(
+        ["python", "marl/marl_comm_controller.py"]
+    )
+
+elif mode == "INDEPENDENT_AGENT":
+    subprocess.run(
+        ["python", "marl/marl_controller.py"]
+    )
