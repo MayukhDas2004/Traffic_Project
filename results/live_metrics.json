@@ -1,0 +1,47 @@
+{
+    "A0": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "A1": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "A2": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "B0": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "B1": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "B2": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "C0": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    },
+    "C1": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "RED"
+    },
+    "C2": {
+        "queue": 0,
+        "wait": 0.0,
+        "phase": "GREEN"
+    }
+}

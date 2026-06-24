@@ -2,6 +2,7 @@ from communication.message import TrafficMessage
 from communication.failure_injector import FailureInjector
 from detector.failure_detector import FailureDetector
 from detector.mode_switcher import ModeSwitcher
+import subprocess
 
 injector = FailureInjector(
     packet_loss=0.3,
@@ -28,15 +29,48 @@ if result is None:
 
 else:
 
+    state, message = result
+
     status = detector.detect(
         packet_lost=False,
-        delayed=False
+        delayed=(state == "DELAYED")
     )
 
 mode = switcher.select_mode(status)
+
+with open(
+    "dashboard/controller_status.txt",
+    "w",
+    encoding="utf-8"
+) as f:
+    f.write(mode)
 
 print("STATUS =", status)
 print("MODE =", mode)
 
 if result:
     print(result)
+
+if mode == "COOPERATIVE_MARL":
+
+    print("Launching Cooperative MARL...")
+
+    subprocess.run(
+        ["python", "marl/marl_comm_controller.py"]
+    )
+
+elif mode == "LIMITED_COMMUNICATION":
+
+    print("Launching Limited Communication MARL...")
+
+    subprocess.run(
+        ["python", "marl/limited_comm_controller.py"]
+    )
+
+elif mode == "INDEPENDENT_AGENT":
+
+    print("Launching Independent MARL...")
+
+    subprocess.run(
+        ["python", "marl/marl_controller.py"]
+    )

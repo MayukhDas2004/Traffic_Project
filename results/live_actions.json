@@ -1,0 +1,11 @@
+{
+    "A0": "KEEP",
+    "A1": "SWITCH",
+    "A2": "SWITCH",
+    "B0": "KEEP",
+    "B1": "KEEP",
+    "B2": "SWITCH",
+    "C0": "KEEP",
+    "C1": "SWITCH",
+    "C2": "SWITCH"
+}

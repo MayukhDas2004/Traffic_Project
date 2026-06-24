@@ -1,0 +1,17 @@
+COOPERATIVE_MARL
+Average Waiting Time : 36424.81
+Average Queue Length : 13.05
+Total Throughput     : 24
+Average Travel Time  : 3881.47
+
+DIGITAL_TWIN
+Average Waiting Time : 36956.88
+Average Queue Length : 13.73
+Total Throughput     : 28
+Average Travel Time  : 3821.41
+
+INDEPENDENT_AGENT
+Average Waiting Time : 37830.18
+Average Queue Length : 3.29
+Total Throughput     : 22
+Average Travel Time  : 5140.54

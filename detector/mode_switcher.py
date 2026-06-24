@@ -6,7 +6,7 @@ class ModeSwitcher:
             return "COOPERATIVE_MARL"
 
         elif status == "DEGRADED":
-            return "LIMITED_COMMUNICATION"
+            return "DIGITAL_TWIN"
 
         elif status == "FAILED":
             return "INDEPENDENT_AGENT"

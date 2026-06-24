@@ -2,6 +2,8 @@ from stable_baselines3 import PPO
 import sys
 import os
 
+print("\nLIMITED COMMUNICATION MODE ACTIVE")
+print("Partial agent communication enabled\n")
 
 
 BASE_DIR = os.path.dirname(
@@ -57,5 +59,8 @@ for step in range(500):
             print(f"{tls} -> {decision}")
 
         print("Reward =", reward)
+    
+    if step % 50 == 0:
+        print("Agents exchanging limited information...")
 
 env.close()
